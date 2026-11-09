@@ -75,3 +75,23 @@ revisión; después entra como `docente.demo` (o como administrador), revísala 
 
 > **Importante:** borra estos usuarios (en `/admin/users/`, como administrador) o cambia su contraseña
 > antes de publicar el blog en internet. Contraseñas conocidas en un servidor público son un riesgo.
+//Como he desplegado el proyecto
+
+Para desplegar el proyecto en Debian he seguido estos pasos:
+1. He clonado el repositorio de GitHub en mi máquina virtual
+2. He instalado las dependencias del proyecto con Composer
+3. HE creado el esquema de base de datos con: 
+php bin/console create-schema
+4. He creado el usuario administrador con: 
+php bin/console app:create-user admin "Administrador"
+5. He iniciado el servidor web local con:
+php -S localhost:8000 -t public
+6. He accedido al blog desde `http://localhost:8000`
+y al panel de administración desde `http://localhost:8000/admin`.
+
+###PROBLEMAS ENCONTRADOS
+--Tuve problemas de conexión a Internet desde la máquina virtual de Debian
+-- Al ejecutar 'git pull', apareció un error de resolución del nombre
+'github.com'
+--También practiqué la creación de ramas, las fusiones y la resolución de 
+conflictos en git.
